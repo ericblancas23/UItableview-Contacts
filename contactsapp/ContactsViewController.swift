@@ -28,17 +28,17 @@ class ContactsViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        view.backgroundColor = .white
+        view.backgroundColor = .red
         view.addSubview(contactsTableView)
         contactsTableView.dataSource = self
         //auto layout
-        contactsTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        contactsTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         contactsTableView.translatesAutoresizingMaskIntoConstraints = false
         contactsTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        contactsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        contactsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        contactsTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        contactsTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         contactsTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        contactsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        contactsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         contactsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "contactCell")
     }
 }
