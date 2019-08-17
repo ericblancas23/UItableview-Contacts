@@ -28,7 +28,7 @@ class ContactsViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        view.backgroundColor = .red
+        
         view.addSubview(contactsTableView)
         contactsTableView.dataSource = self
         //auto layout
@@ -40,5 +40,13 @@ class ContactsViewController: UIViewController, UITableViewDataSource {
         contactsTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         contactsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         contactsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "contactCell")
+        setupNavigation()
+    }
+    
+    func setupNavigation() {
+        navigationItem.title = "Contacts"
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.003921568627, green: 0.003921568627, blue: 0.003921568627, alpha: 1)]
     }
 }
