@@ -18,7 +18,7 @@ class ContactsViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: <#T##IndexPath#>)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
         cell.textLabel?.text = contacts[indexPath.row].name
         return cell
     }
@@ -35,6 +35,8 @@ class ContactsViewController: UIViewController, UITableViewDataSource {
         contactsTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         contactsTableView.translatesAutoresizingMaskIntoConstraints = false
         contactsTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        contactsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        contactsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         contactsTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         contactsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         contactsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "contactCell")
